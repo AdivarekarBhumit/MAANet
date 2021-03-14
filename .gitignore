@@ -161,4 +161,7 @@ dmypy.json
 !.vscode/extensions.json
 *.code-workspace
 
+## Custom Files
+References.txt
+
 # End of https://www.toptal.com/developers/gitignore/api/python,jupyternotebooks,vscode

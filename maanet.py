@@ -75,7 +75,7 @@ class MicroStructure(nn.Module):
         output = torch.add(x, conv_4)
         # print('OP', output.shape)
 
-        return output/3 # Scaled down as contains 3 LA blocks
+        return torch.div(output, 3.0) # Scaled down as contains 3 LA blocks
 
 class LARD(nn.Module):
     '''
@@ -93,11 +93,11 @@ class LARD(nn.Module):
             op = self.micro_structure(op)
         if op.shape[1] != 64:
             op = self.conv_final(op)
-        print(op.shape)
+        # print(op.shape)
 
         op = torch.add(op, x)
         
-        return op / 3
+        return torch.div(op, 3.0)
 
 class DeepExtractionUnit(nn.Module):
     '''
@@ -137,7 +137,7 @@ class GlobalAwareAttention(nn.Module):
     def forward(self, x):
         conv0 = self.conv0(x)
         conv1 = F.relu(self.conv1(conv0))
-        conv2 = F.sigmoid(self.conv2(conv1))
+        conv2 = torch.sigmoid(self.conv2(conv1))
         op = torch.mul(x, conv2)
         return op
 
