@@ -4,6 +4,15 @@ MAANet: Multi-view Aware Attention Networks for Image Super-Resolution implement
 Deep Convolutional Neural Networks (DCNNs) based Image Super-Resolution (SR) with Local and Global Aware Attention modules.<br>
 More details can be found in the the <a href="http://arxiv.org/abs/1904.06252">paper</a>.
 
+### Requirements
+- Pytorch 1.7 +
+- Torchvision 0.8.2 +
+- Numpy 1.14 +
+- Scikit-Image 0.16 +
+
+### To Do
+- Train model for 10<sup>6</sup> Epochs.
+
 ### Dataset
 DIV2K: DIVerse 2K resolution high quality images.<br>
 Dataset can be downloaded from this <a href="https://data.vision.ee.ethz.ch/cvl/DIV2K/">link</a>.
